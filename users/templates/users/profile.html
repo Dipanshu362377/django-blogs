@@ -9,6 +9,11 @@
           <p class="text-secondary">{{ user.email }}</p>
         </div>
       </div>
-      <!-- FORM HERE -->
-    </div>
+        <form method="POST">
+          {% csrf_token %}
+          {{ u_form|crispy }}
+          {{ p_form|crispy }}
+          <button type="submit" class="btn btn-info w-100 mt-3">Sign Up</button>
+        </form>    
+      </div>
 {% endblock content %}

@@ -2,6 +2,7 @@
 {% block content %}
     {% for conts in cont %}
         <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ conts.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ conts.author }}</a>

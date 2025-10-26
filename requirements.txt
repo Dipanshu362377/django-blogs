@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 pymupdf
 google-generativeai
 gunicorn
 django
-=======
 altair==5.5.0
 asgiref==3.8.1
 attrs==25.3.0
@@ -54,4 +52,3 @@ typing_extensions==4.15.0
 tzdata==2025.1
 urllib3==2.5.0
 watchdog==6.0.0
->>>>>>> dfdbf32 (add crispy forms to requirements)

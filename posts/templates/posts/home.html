@@ -8,7 +8,7 @@
               <a class="mr-2" href="#">{{ conts.author }}</a>
               <small class="text-muted">{{ conts.date_posted|date:"F d, Y" }}</small>
             </div>
-            <h2><a class="article-title" href="#">{{ conts.title }}</a></h2>
+            <h2><a class="article-title" href="{% url 'post-detail' conts.id %}">{{ conts.title }}</a></h2>
             <p class="article-content">{{ conts.content }}</p>
           </div>
         </article>

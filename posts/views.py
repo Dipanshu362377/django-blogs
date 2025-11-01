@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
@@ -25,6 +26,17 @@ class PostListView(ListView):
     template_name = 'posts/home.html'
     context_object_name = 'cont'
     ordering = ['-date_posted']
+    
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'posts/user_post.html'
+    context_object_name = 'cont'
+    
+    def get_queryset(self):
+        user= get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
+    
+    
     
 class PostDetailView(DetailView):
     model = Post
